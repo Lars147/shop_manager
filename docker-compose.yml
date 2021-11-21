@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  scrapyd:
+    image: vimagick/scrapyd:py3
+    ports:
+      - "127.0.0.1:6800:6800"
+    volumes:
+      - ./scrapyd_data:/var/lib/scrapyd
+      - /usr/local/lib/python3.7/dist-packages
+    restart: unless-stopped
